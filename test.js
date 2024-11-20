@@ -1,0 +1,32 @@
+tst > ls $hhgjh -l
+value (ls)       key (WORD)
+value ( )        key (WHITESPACE)
+value ($hhgjh)   key (WORD)
+value ( )        key (WHITESPACE)
+value (-l)       key (WORD)
+expanded ==== ls
+expanded ====  
+expanded ==== 
+expanded ====  
+expanded ==== -l
+#ambigous
+tst> ls > $hhgjh // var makaynach f env
+export v="aa   bb"
+value (export)   key (WORD)
+value ( )        key (WHITESPACE)
+value (v=)       key (WORD)
+value ("aa   bb")        key (WORD)
+expanded ==== export
+expanded ====  
+expanded ==== v=
+expanded ==== "aa   bb"
+minishell> ls > $v // l v makhss ykoun fiha kter mn arg wa7d
+cat << ""l && cat << ''l should not expand  
+----------------------------------------
+ls |"       "
+ls > >> << <  // darori ykoun werah chi haja
+ls >> ""$USER ====> hna khas thayd empty string bach tb9a $USER bohodha ;
+syntaax erroe ==========================================      
+ila kan 2 or more redirections wra ba3dhom 
+haka                  >> >> or << << or >> > or << > or >> < ...
+========================================================
